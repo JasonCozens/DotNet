@@ -42,6 +42,12 @@ namespace CSDataTypes.Test
         }
 
         [TestMethod]
+        public void TypeOf_SameAs_GetType_Test()
+        {
+            Assert.AreEqual(true.GetType(), typeof(bool));
+        }
+
+        [TestMethod]
         public void ToStringTest()
         {
             Assert.AreEqual("True", true.ToString());
