@@ -66,5 +66,22 @@ namespace CSDataTypes.Test
             Assert.AreEqual(1, ToDouble(true));
             Assert.AreEqual(0, ToDouble(false));
         }
+
+        /// <summary>
+        /// Note that bool.Parse accepts more that just bool.TrueString
+        /// and bool.FalseString.
+        /// </summary>
+        [TestMethod]
+        public void ParseTests()
+        {
+            Assert.AreEqual("True", bool.TrueString);
+            Assert.IsTrue(bool.Parse("true"));
+            Assert.IsTrue(bool.Parse("True"));
+            Assert.IsTrue(bool.Parse("TrUe"));
+            Assert.AreEqual("False", bool.FalseString);
+            Assert.IsFalse(bool.Parse("false"));
+            Assert.IsFalse(bool.Parse("False"));
+            Assert.IsFalse(bool.Parse("FaLsE"));
+        }
     }
 }
