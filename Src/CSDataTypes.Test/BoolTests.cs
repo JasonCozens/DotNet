@@ -17,5 +17,14 @@ namespace CSDataTypes.Test
         {
             Assert.IsFalse(false);
         }
+
+        [TestMethod]
+        public void EquivalenceTest()
+        {
+            Assert.IsTrue(true == true);
+            Assert.IsTrue(false == false);
+            Assert.IsFalse(true == false);
+            Assert.IsFalse(false == true);
+        }
     }
 }
