@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BoolTests.cs" />
+    <Compile Include="CSharpAndDotNetTypesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Choose>
