@@ -7,9 +7,15 @@ namespace CSDataTypes.Test
     public class BoolTests
     {
         [TestMethod]
-        public void IsTrue()
+        public void IsTrueTest()
         {
             Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        public void IsFalseTest()
+        {
+            Assert.IsFalse(false);
         }
     }
 }
