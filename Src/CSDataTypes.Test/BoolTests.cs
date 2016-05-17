@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Convert;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSDataTypes.Test
@@ -55,5 +56,15 @@ namespace CSDataTypes.Test
             Assert.AreEqual("System.Boolean", true.GetType().ToString());
         }
 
+        [TestMethod]
+        public void ToNumTypeTest()
+        {
+            Assert.AreEqual(1, ToByte(true));
+            Assert.AreEqual(0, ToByte(false));
+            Assert.AreEqual(1, ToDecimal(true));
+            Assert.AreEqual(0, ToDecimal(false));
+            Assert.AreEqual(1, ToDouble(true));
+            Assert.AreEqual(0, ToDouble(false));
+        }
     }
 }
