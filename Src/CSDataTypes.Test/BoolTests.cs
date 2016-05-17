@@ -33,5 +33,12 @@ namespace CSDataTypes.Test
             var boolType = true.GetType();
             Assert.AreEqual("System.Boolean", boolType.FullName);
         }
+
+        [TestMethod]
+        public void TypeOfTest()
+        {
+            var boolType = typeof(bool);
+            Assert.AreEqual("System.Boolean", boolType.FullName);
+        }
     }
 }
