@@ -26,5 +26,12 @@ namespace CSDataTypes.Test
             Assert.IsFalse(true == false);
             Assert.IsFalse(false == true);
         }
+
+        [TestMethod]
+        public void GetTypeTest()
+        {
+            var boolType = true.GetType();
+            Assert.AreEqual("System.Boolean", boolType.FullName);
+        }
     }
 }
