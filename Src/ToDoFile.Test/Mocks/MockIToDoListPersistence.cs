@@ -8,9 +8,21 @@ namespace ToDoFile.Test.Mocks
 {
     internal class MockIToDoListPersistence : IToDoListPersistence
     {
+        private IEnumerable<string> _toDoList;
+
+        public MockIToDoListPersistence()
+        {
+            _toDoList = new List<string>();
+        }
+
+        public MockIToDoListPersistence(IEnumerable<string> toDoList)
+        {
+            _toDoList = toDoList;
+        }
+
         public IEnumerable<string> Open(string filename)
         {
-            return new List<string>();
+            return _toDoList;
         }
 
         public void Save(IEnumerable<string> toDoList)

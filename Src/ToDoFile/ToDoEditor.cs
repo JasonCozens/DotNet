@@ -13,6 +13,7 @@ namespace ToDoFile
         {
             if (persistence == null) throw new ArgumentNullException("persistence");
             _persistence = persistence;
+            _toDoList.InsertRange(0, _persistence.Open(""));
             CurrentFile = "";
         }
 
