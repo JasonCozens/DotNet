@@ -34,5 +34,20 @@ namespace ToDoFile.Test
             var toDoEditor = new ToDoEditor(new MockIToDoListPersistence(toDoList));
             Assert.AreEqual(3, toDoEditor.Count);
         }
+
+        [TestMethod]
+        public void GetItem_GetsCorrectItem_Test()
+        {
+            var toDoList = new List<string>
+            {
+                "Task 1.",
+                "Task 2.",
+                "Task 3."
+            };
+            var toDoEditor = new ToDoEditor(new MockIToDoListPersistence(toDoList));
+            Assert.AreEqual("Task 1.", toDoEditor.ToDoItem(1));
+            Assert.AreEqual("Task 2.", toDoEditor.ToDoItem(2));
+            Assert.AreEqual("Task 3.", toDoEditor.ToDoItem(3));
+        }
     }
 }

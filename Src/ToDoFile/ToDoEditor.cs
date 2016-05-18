@@ -32,5 +32,10 @@ namespace ToDoFile
         {
             _toDoList.Add(description);
         }
+
+        public string ToDoItem(int i)
+        {
+            return _toDoList[i - 1];
+        }
     }
 }
