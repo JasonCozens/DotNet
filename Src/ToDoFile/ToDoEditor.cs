@@ -1,4 +1,7 @@
-﻿namespace ToDoFile
+﻿using System;
+using System.IO;
+
+namespace ToDoFile
 {
     public class ToDoEditor
     {
@@ -11,6 +14,11 @@
             {
                 return 0;
             }
+        }
+
+        public void Open(string toDoList)
+        {
+            File.OpenText(toDoList);
         }
     }
 }
