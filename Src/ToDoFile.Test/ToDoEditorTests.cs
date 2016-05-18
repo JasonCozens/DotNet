@@ -24,9 +24,11 @@ namespace ToDoFile.Test
             {
                 var toDoEditor = new ToDoEditor();
                 string actualPath = "";
-                PFile.OpenTextString().Body = path => { actualPath = path; return null; };
+                PFile.OpenTextString().Body = path => { actualPath = path; throw new FileNotFoundException("", path); };
                 toDoEditor.Open("todo.txt");
-                Assert.AreEqual("todo.txt", actualPath);
+                Assert.AreEqual("", toDoEditor.CurrentFile);
+                var message = toDoEditor.Message;
+                Assert.IsTrue(message.Contains("todo.txt"), message);
             }
         }
 

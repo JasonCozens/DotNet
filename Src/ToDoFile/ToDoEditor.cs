@@ -19,9 +19,18 @@ namespace ToDoFile
 
         public string CurrentFile { get; private set; }
 
+        public string Message { get; set; }
+
         public void Open(string toDoList)
         {
-            File.OpenText(toDoList);
+            try
+            {
+                File.OpenText(toDoList);
+            }
+            catch (FileNotFoundException ex)
+            {
+                Message = string.Format("Could not open file {0}", ex.FileName);
+            }
         }
     }
 }
