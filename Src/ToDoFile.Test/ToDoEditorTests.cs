@@ -33,15 +33,16 @@ namespace ToDoFile.Test
         }
 
         [TestMethod]
-        public void OpenFile_Test()
+        public void OpenEmptyFile_Test()
         {
             using (new IndirectionsContext())
             {
                 var toDoEditor = new ToDoEditor();
                 string actualPath = "";
-                PFile.OpenTextString().Body = path => { actualPath = path; return null; };
+                PFile.OpenTextString().Body = path => { actualPath = path; return new StreamReader(new MemoryStream()); };
                 toDoEditor.Open("todo.txt");
-                Assert.AreEqual("todo.txt", actualPath);
+                Assert.AreEqual("todo.txt", toDoEditor.CurrentFile);
+                Assert.AreEqual(0, toDoEditor.Count);
             }
         }
     }

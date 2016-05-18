@@ -26,6 +26,7 @@ namespace ToDoFile
             try
             {
                 File.OpenText(toDoList);
+                CurrentFile = toDoList;
             }
             catch (FileNotFoundException ex)
             {
