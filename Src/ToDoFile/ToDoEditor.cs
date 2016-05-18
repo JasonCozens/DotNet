@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ToDoFile
@@ -6,6 +7,7 @@ namespace ToDoFile
     public class ToDoEditor
     {
         IToDoListPersistence _persistence;
+        readonly List<string> _toDoList = new List<string>();
 
         public ToDoEditor(IToDoListPersistence persistence)
         {
@@ -17,7 +19,7 @@ namespace ToDoFile
         public int Count {
             get
             {
-                return 0;
+                return _toDoList.Count;
             }
         }
 
@@ -27,7 +29,7 @@ namespace ToDoFile
 
         public void Add(string description)
         {
-
+            _toDoList.Add(description);
         }
     }
 }
