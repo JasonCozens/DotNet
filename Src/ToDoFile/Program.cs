@@ -11,10 +11,9 @@ namespace ToDoFile
     {
         static void Main(string[] args)
         {
-            var toDoEditor = new ToDoEditor();
+            var toDoEditor = new ToDoEditor(null);
             Write("Please enter the name of your To Do list: ");
             var ans = ReadLine();
-            toDoEditor.Open(ans);
             if (toDoEditor.CurrentFile == "")
             {
                 WriteLine(toDoEditor.Message);

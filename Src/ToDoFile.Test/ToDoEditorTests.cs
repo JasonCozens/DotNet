@@ -3,47 +3,22 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO.Prig;
 using System.IO;
 using Urasandesu.Prig.Framework;
+using ToDoFile.Test.Mocks;
 
 namespace ToDoFile.Test
 {
     [TestClass]
     public class ToDoEditorTests
     {
+        /// <summary>
+        /// This is the method that gave problems with setting up the internal list.
+        /// </summary>
         [TestMethod]
-        public void NewToDoEditor_HasNoItems_Test()
+        public void AddToDoItem_Test()
         {
-            var toDoEditor = new ToDoEditor();
-            Assert.AreEqual("", toDoEditor.CurrentFile);
-            Assert.AreEqual(0, toDoEditor.Count);
-        }
-
-        [TestMethod]
-        public void OpenFile_FileNotFoundException_Test()
-        {
-            using (new IndirectionsContext())
-            {
-                var toDoEditor = new ToDoEditor();
-                string actualPath = "";
-                PFile.OpenTextString().Body = path => { actualPath = path; throw new FileNotFoundException("", path); };
-                toDoEditor.Open("todo.txt");
-                Assert.AreEqual("", toDoEditor.CurrentFile);
-                var message = toDoEditor.Message;
-                Assert.IsTrue(message.Contains("todo.txt"), message);
-            }
-        }
-
-        [TestMethod]
-        public void OpenEmptyFile_Test()
-        {
-            using (new IndirectionsContext())
-            {
-                var toDoEditor = new ToDoEditor();
-                string actualPath = "";
-                PFile.OpenTextString().Body = path => { actualPath = path; return new StreamReader(new MemoryStream()); };
-                toDoEditor.Open("todo.txt");
-                Assert.AreEqual("todo.txt", toDoEditor.CurrentFile);
-                Assert.AreEqual(0, toDoEditor.Count);
-            }
+            var toDoEditor = new ToDoEditor(new MockIToDoListPersistence());
+            toDoEditor.Add("The First Task");
+            Assert.AreEqual(1, toDoEditor.Count);
         }
     }
 }

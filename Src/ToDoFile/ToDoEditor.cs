@@ -5,8 +5,12 @@ namespace ToDoFile
 {
     public class ToDoEditor
     {
-        public ToDoEditor()
+        IToDoListPersistence _persistence;
+
+        public ToDoEditor(IToDoListPersistence persistence)
         {
+            if (persistence == null) throw new ArgumentNullException("persistence");
+            _persistence = persistence;
             CurrentFile = "";
         }
 
@@ -21,17 +25,9 @@ namespace ToDoFile
 
         public string Message { get; set; }
 
-        public void Open(string toDoList)
+        public void Add(string description)
         {
-            try
-            {
-                File.OpenText(toDoList);
-                CurrentFile = toDoList;
-            }
-            catch (FileNotFoundException ex)
-            {
-                Message = string.Format("Could not open file {0}", ex.FileName);
-            }
+
         }
     }
 }
