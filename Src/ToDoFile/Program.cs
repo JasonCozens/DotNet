@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace ToDoFile
 {
@@ -10,6 +11,9 @@ namespace ToDoFile
     {
         static void Main(string[] args)
         {
+            var toDoEditor = new ToDoEditor();
+            toDoEditor.Open("todo");
+            ReadLine();
         }
     }
 }

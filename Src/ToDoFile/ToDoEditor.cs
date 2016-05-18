@@ -7,6 +7,7 @@ namespace ToDoFile
     {
         public ToDoEditor()
         {
+            CurrentFile = "";
         }
 
         public int Count {
@@ -15,6 +16,8 @@ namespace ToDoFile
                 return 0;
             }
         }
+
+        public string CurrentFile { get; private set; }
 
         public void Open(string toDoList)
         {
