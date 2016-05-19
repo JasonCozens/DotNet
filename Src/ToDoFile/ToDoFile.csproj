@@ -45,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IToDoList.cs" />
     <Compile Include="IToDoListPersistence.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToDoEditor.cs" />
+    <Compile Include="ToDoList.cs" />
     <Compile Include="ToDoListPersistence.cs" />
   </ItemGroup>
   <ItemGroup>

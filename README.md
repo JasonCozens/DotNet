@@ -47,7 +47,20 @@ And Test.
 public void Add_Test()
 {
     IToDoList toDoList = new <Implementation>();
+	Assert.AreEqaual(<expected>, <actual>);
 }
 ```
 
 At this point it is difficult to see how to test the implementation as it is not very observable.
+After construction we need some way of obsering the state of the to do list.
+We'll start by adding a test to see if the list is empty.
+
+```csharp
+public interface IToDoList
+{
+	bool IsEmpty { get; }
+    void Add(string description);
+	string Get();
+	void Del();
+}
+```
