@@ -64,3 +64,20 @@ public interface IToDoList
 	void Del();
 }
 ```
+
+The interface we now have is split into command and query methods:
+
+```csharp
+namespace ToDoFile
+{
+    interface IToDoList
+    {
+        // Command.
+        void Add(string description);
+        void Del();
+        // Query.
+        bool IsEmpty { get; }
+        string Get();
+    }
+}
+```

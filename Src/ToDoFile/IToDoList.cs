@@ -8,9 +8,11 @@ namespace ToDoFile
 {
     interface IToDoList
     {
-        bool IsEmpty { get; }
+        // Command.
         void Add(string description);
-        string Get();
         void Del();
+        // Query.
+        bool IsEmpty { get; }
+        string Get();
     }
 }

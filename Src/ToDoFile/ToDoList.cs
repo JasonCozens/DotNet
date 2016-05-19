@@ -30,6 +30,10 @@ namespace ToDoFile
 
         public string Get()
         {
+            if (_toDoList.Count == 0)
+            {
+                throw new ToDoListException("There are no items in the to do list.");
+            }
             return _toDoList.Peek();
         }
     }

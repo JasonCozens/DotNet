@@ -40,5 +40,25 @@ namespace ToDoFile.Test
             Assert.AreEqual(false, toDoList.IsEmpty);
             Assert.AreEqual("First Task", toDoList.Get());
         }
+
+        [TestMethod]
+        public void GetItemForEmptyListThrowsException()
+        {
+            var toDoList = new ToDoList();
+            try
+            {
+                toDoList.Get();
+                Assert.Fail("[TEST OUTPUT] No exception thrown.");
+            }
+            catch (ToDoListException)
+            {
+                 // Is there any point in checking the message here?
+            }
+            catch (AssertFailedException) { throw; }
+            catch (Exception ex)
+            {
+                Assert.Fail("[TEST OUTPUT] Incorrect Exception {0}", ex);
+            }
+        }
     }
 }
