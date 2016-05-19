@@ -53,6 +53,18 @@ namespace ToDoFile.Test
         }
 
         [TestMethod]
+        public void DeletingItemFromListChangesCurrentItem()
+        {
+            var toDoList = new ToDoList();
+            toDoList.Add("First Task");
+            toDoList.Add("Second Task");
+            Assert.AreEqual(false, toDoList.IsEmpty);
+            toDoList.Del();
+            Assert.AreEqual(false, toDoList.IsEmpty);
+            Assert.AreEqual("Second Task", toDoList.Get());
+        }
+
+        [TestMethod]
         public void GetItemForEmptyListThrowsException()
         {
             var toDoList = new ToDoList();
