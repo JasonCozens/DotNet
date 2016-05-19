@@ -25,7 +25,7 @@ namespace ToDoFile
 
         public void Del()
         {
-            throw new NotImplementedException();
+            _toDoList.Dequeue();
         }
 
         public string Get()
