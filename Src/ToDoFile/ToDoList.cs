@@ -30,7 +30,7 @@ namespace ToDoFile
 
         public string Get()
         {
-            throw new NotImplementedException();
+            return _toDoList.Peek();
         }
     }
 }

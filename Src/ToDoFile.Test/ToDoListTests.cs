@@ -14,11 +14,20 @@ namespace ToDoFile.Test
         }
 
         [TestMethod]
-        public void ToDoLIst_IsNotEmpty_WhenTaskIsAdded()
+        public void ToDoList_IsNotEmpty_WhenTaskIsAdded()
         {
             var toDoList = new ToDoList();
             toDoList.Add("A New Task");
             Assert.AreEqual(false, toDoList.IsEmpty);
+        }
+
+        [TestMethod]
+        public void ToDoList_Added_ItenIsReturned()
+        {
+            var toDoList = new ToDoList();
+            toDoList.Add("A New Task");
+            Assert.AreEqual(false, toDoList.IsEmpty);
+            Assert.AreEqual("A New Task", toDoList.Get());
         }
     }
 }
