@@ -25,6 +25,10 @@ namespace ToDoFile
 
         public void Del()
         {
+            if (_toDoList.Count == 0)
+            {
+                throw new ToDoListException("There are no items in the to do list.");
+            }
             _toDoList.Dequeue();
         }
 

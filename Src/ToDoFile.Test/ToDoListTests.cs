@@ -71,5 +71,25 @@ namespace ToDoFile.Test
                 Assert.Fail("[TEST OUTPUT] Incorrect Exception {0}", ex);
             }
         }
+
+        [TestMethod]
+        public void DelItemForEmptyListThrowsException()
+        {
+            var toDoList = new ToDoList();
+            try
+            {
+                toDoList.Del();
+                Assert.Fail("[TEST OUTPUT] No exception thrown.");
+            }
+            catch (ToDoListException)
+            {
+                // Is there any point in checking the message here?
+            }
+            catch (AssertFailedException) { throw; }
+            catch (Exception ex)
+            {
+                Assert.Fail("[TEST OUTPUT] Incorrect Exception {0}", ex);
+            }
+        }
     }
 }
