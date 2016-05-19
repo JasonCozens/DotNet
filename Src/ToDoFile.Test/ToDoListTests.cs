@@ -28,6 +28,17 @@ namespace ToDoFile.Test
             toDoList.Add("A New Task");
             Assert.AreEqual(false, toDoList.IsEmpty);
             Assert.AreEqual("A New Task", toDoList.Get());
+            Assert.AreEqual(false, toDoList.IsEmpty);
+        }
+
+        [TestMethod]
+        public void FirstItemAddedIsAlwaysCurrentItem()
+        {
+            var toDoList = new ToDoList();
+            toDoList.Add("First Task");
+            toDoList.Add("Second Task");
+            Assert.AreEqual(false, toDoList.IsEmpty);
+            Assert.AreEqual("First Task", toDoList.Get());
         }
     }
 }
