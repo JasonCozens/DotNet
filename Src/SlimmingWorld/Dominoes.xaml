@@ -1,0 +1,21 @@
+﻿<Window x:Class="SlimmingWorld.Dominoes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SlimmingWorld"
+        mc:Ignorable="d"
+        Title="Dominoes" Height="300" Width="300">
+    <Grid>
+        <Canvas Width="60" Height="60" Background="AntiqueWhite">
+            <Rectangle Width="60" Height="80" ></Rectangle>
+            <Ellipse Fill="Blue" Canvas.Top="25" Canvas.Left="25" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Fill="Blue" Canvas.Top="5" Canvas.Left="10" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Fill="Blue" Canvas.Top="25" Canvas.Left="10" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Fill="Blue" Canvas.Top="45" Canvas.Left="10" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Fill="Blue" Canvas.Top="5" Canvas.Left="40" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Fill="Blue" Canvas.Top="25" Canvas.Left="40" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Fill="Blue" Canvas.Top="45" Canvas.Left="40" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+        </Canvas>
+    </Grid>
+</Window>

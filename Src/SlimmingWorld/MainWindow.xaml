@@ -1,0 +1,29 @@
+﻿<Window x:Class="SlimmingWorld.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SlimmingWorld"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <ListBox Name="Items" SelectionChanged="Items_OnSelectionChanged" ToolTip="Pick An Item">
+            <ListBoxItem>First Choice</ListBoxItem>
+            <ListBoxItem>Second Choice</ListBoxItem>
+        </ListBox>
+        <GridSplitter Grid.Column ="0" Background="Blue" Width="5"
+                HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Button Height="24" Background="Red" Click="ButtonBase_OnClick">Red</Button>
+            <Button Background="Yellow" Click="ButtonBase_OnClick">Amber</Button>
+            <Button Background="Green" Click="ButtonBase_OnClick">Green</Button>
+            
+            <TextBox  VerticalAlignment="Bottom" Name="Selection" HorizontalContentAlignment="Center" BorderThickness="1" BorderBrush="Blue">Choose</TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

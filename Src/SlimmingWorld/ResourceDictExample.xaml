@@ -1,0 +1,22 @@
+﻿<Window x:Class="SlimmingWorld.ResourceDictExample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SlimmingWorld"
+        mc:Ignorable="d"
+        Title="ResourceDictExample" Height="300" Width="300">
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource formBackground}">
+        <Grid.Resources>
+            <RadialGradientBrush x:Key="formBackground">
+                <GradientStop Color="#B200B1FF" Offset="0.994"/>
+                <GradientStop Color="#FF000CFF"/>
+            </RadialGradientBrush>
+        </Grid.Resources>
+        <TextBlock 
+        Text="Resource Dictionary Demo" 
+        Foreground="Yellow" 
+        FontSize="18" 
+        VerticalAlignment="Top"/>
+    </Grid>
+</Window>
