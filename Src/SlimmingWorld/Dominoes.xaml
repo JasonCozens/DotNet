@@ -5,9 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SlimmingWorld"
         mc:Ignorable="d"
-        Title="Dominoes" Height="300" Width="300">
+        Title="Dominoes" Height="300" Width="540">
+    <Window.Resources>
+        <Canvas x:Key="Domino" x:Shared="False" Width="60" Height="60" Background="AntiqueWhite">
+            <Rectangle Width="60" Height="80" ></Rectangle>
+            <Ellipse Name="M" Fill="Blue" Canvas.Top="25" Canvas.Left="25" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Name="L1" Fill="Blue" Canvas.Top="5" Canvas.Left="10" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Name="L2" Fill="Blue" Canvas.Top="25" Canvas.Left="10" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Name="L3" Fill="Blue" Canvas.Top="45" Canvas.Left="10" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Name="R1" Fill="Blue" Canvas.Top="5" Canvas.Left="40" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Name="R2" Fill="Blue" Canvas.Top="25" Canvas.Left="40" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+            <Ellipse Name="R3" Fill="Blue" Canvas.Top="45" Canvas.Left="40" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
+        </Canvas>
+    </Window.Resources>
     <Grid>
-        <Canvas Width="60" Height="60" Background="AntiqueWhite">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Canvas Background="AntiqueWhite">
             <Rectangle Width="60" Height="80" ></Rectangle>
             <Ellipse Fill="Blue" Canvas.Top="25" Canvas.Left="25" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
             <Ellipse Fill="Blue" Canvas.Top="5" Canvas.Left="10" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
@@ -17,5 +42,12 @@
             <Ellipse Fill="Blue" Canvas.Top="25" Canvas.Left="40" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
             <Ellipse Fill="Blue" Canvas.Top="45" Canvas.Left="40" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Ellipse>
         </Canvas>
+        <ContentControl Name="D0" Grid.Row="1" Grid.Column="0" Content="{StaticResource Domino}" />
+        <ContentControl Name="D1" Grid.Row="1" Grid.Column="1" Content="{StaticResource Domino}" />
+        <ContentControl Name="D2" Grid.Row="1" Grid.Column="2" Content="{StaticResource Domino}" />
+        <ContentControl Name="D3" Grid.Row="1" Grid.Column="3" Content="{StaticResource Domino}" />
+        <ContentControl Name="D4" Grid.Row="1" Grid.Column="4" Content="{StaticResource Domino}" />
+        <ContentControl Name="D5" Grid.Row="1" Grid.Column="5" Content="{StaticResource Domino}" />
+        <ContentControl Name="D6" Grid.Row="1" Grid.Column="6" Content="{StaticResource Domino}" />
     </Grid>
 </Window>
