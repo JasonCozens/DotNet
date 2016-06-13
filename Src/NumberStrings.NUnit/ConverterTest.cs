@@ -24,7 +24,7 @@ namespace NumberStrings.NUnit
         [TestCase(10, "Ten")]
         [TestCase(20, "Twenty")]
         [TestCase(30, "Thirty")]
-        [TestCase(40, "Fourty")]
+        [TestCase(40, "Forty")]
         [TestCase(50, "Fifty")]
         [TestCase(60, "Sixty")]
         [TestCase(70, "Seventy")]
@@ -53,7 +53,7 @@ namespace NumberStrings.NUnit
         [Test]
         [TestCase(29, "Twenty Nine")]
         [TestCase(38, "Thirty Eight")]
-        [TestCase(47, "Fourty Seven")]
+        [TestCase(47, "Forty Seven")]
         [TestCase(56, "Fifty Six")]
         [TestCase(65, "Sixty Five")]
         [TestCase(74, "Seventy Four")]
@@ -75,6 +75,15 @@ namespace NumberStrings.NUnit
         [TestCase(700, "Seven Hundred")]
         [TestCase(800, "Eight Hundred")]
         [TestCase(900, "Nine Hundred")]
+        [TestCase(101, "One Hundred and One")]
+        [TestCase(209, "Two Hundred and Nine")]
+        [TestCase(310, "Three Hundred and Ten")]
+        [TestCase(411, "Four Hundred and Eleven")]
+        [TestCase(520, "Five Hundred and Twenty")]
+        [TestCase(617, "Six Hundred and Seventeen")]
+        [TestCase(763, "Seven Hundred and Sixty Three")]
+        [TestCase(847, "Eight Hundred and Forty Seven")]
+        [TestCase(999, "Nine Hundred and Ninety Nine")]
         public void MultiplesOf100To900(int number, string numberName)
         {
             Assert.AreEqual(numberName, Converter.NumberToString(number));

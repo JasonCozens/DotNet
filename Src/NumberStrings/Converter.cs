@@ -8,20 +8,41 @@ namespace NumberStrings
 {
     public static class Converter
     {
+        public static Dictionary<int, string> UnitsMap => new Dictionary<int, string>
+        {
+            {1, "One"},
+            {2, "Two"},
+            {3, "Three"},
+            {4, "Four"},
+            {5, "Five"},
+            {6, "Six"},
+            {7, "Seven"},
+            {8, "Eight"},
+            {9, "Nine"}
+        };
+
         public static string NumberToString(int number)
         {
-            var digitMap = new Dictionary<int, string>
+            if (0 < number  & number < 100)
             {
-                {1, "One"},
-                {2, "Two"},
-                {3, "Three"},
-                {4, "Four"},
-                {5, "Five"},
-                {6, "Six"},
-                {7, "Seven"},
-                {8, "Eight"},
-                {9, "Nine"},
-            };
+                return Convert1To99(number);
+            }
+            if (99 < number & number < 1000)
+            {
+                var units = number%10;
+                var tens = (number/10)%10;
+                var hundreds = (number/100);
+                if (units == 0 & tens == 0)
+                {
+                    return $"{UnitsMap[hundreds]} Hundred";
+                }
+                    return $"{UnitsMap[hundreds]} Hundred and {Convert1To99(number % 100)}";
+            }
+            return "";
+        }
+
+        private static string Convert1To99(int number)
+        {
             var teensMap = new Dictionary<int, string>
             {
                 {11, "Eleven"},
@@ -39,7 +60,7 @@ namespace NumberStrings
                 {1, "Ten"},
                 {2, "Twenty"},
                 {3, "Thirty"},
-                {4, "Fourty"},
+                {4, "Forty"},
                 {5, "Fifty"},
                 {6, "Sixty"},
                 {7, "Seventy"},
@@ -48,29 +69,19 @@ namespace NumberStrings
             };
             if (0 < number & number < 10)
             {
-                return digitMap[number];
+                return UnitsMap[number];
             }
             if (10 < number & number < 20)
             {
                 return teensMap[number];
             }
-            if (9 < number & number < 100 & number % 10 == 0)
+            if (9 < number & number < 100 & number%10 == 0)
             {
-                return tensMap[number / 10];
+                return tensMap[number/10];
             }
             if (9 < number & number < 100)
             {
-                return $"{tensMap[number / 10]} {digitMap[number % 10]}";
-            }
-            if (99 < number & number < 1000)
-            {
-                var units = number%10;
-                var tens = (number/10)%10;
-                var hundreds = (number/100);
-                if (units == 0 & tens == 0)
-                {
-                    return $"{digitMap[hundreds]} Hundred";
-                }
+                return $"{tensMap[number/10]} {UnitsMap[number%10]}";
             }
             return "";
         }
