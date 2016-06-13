@@ -34,5 +34,20 @@ namespace NumberStrings.NUnit
         {
             Assert.AreEqual(numberName, Converter.NumberToString(number));
         }
+
+        [Test]
+        [TestCase(11, "Eleven")]
+        [TestCase(12, "Twelve")]
+        [TestCase(13, "Thirteen")]
+        [TestCase(14, "Fourteen")]
+        [TestCase(15, "Fifteen")]
+        [TestCase(16, "Sixteen")]
+        [TestCase(17, "Seventeen")]
+        [TestCase(18, "Eighteen")]
+        [TestCase(19, "Nineteen")]
+        public void Teens(int digit, string digitName)
+        {
+            Assert.AreEqual(digitName, Converter.NumberToString(digit));
+        }
     }
 }

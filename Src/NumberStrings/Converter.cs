@@ -22,6 +22,18 @@ namespace NumberStrings
                 {8, "Eight"},
                 {9, "Nine"},
             };
+            var teensMap = new Dictionary<int, string>
+            {
+                {11, "Eleven"},
+                {12, "Twelve"},
+                {13, "Thirteen"},
+                {14, "Fourteen"},
+                {15, "Fifteen"},
+                {16, "Sixteen"},
+                {17, "Seventeen"},
+                {18, "Eighteen"},
+                {19, "Nineteen"},
+            };
             var tensMap = new Dictionary<int, string>
             {
                 {1, "Ten"},
@@ -37,6 +49,10 @@ namespace NumberStrings
             if (0 < number & number < 10)
             {
                 return digitMap[number];
+            }
+            if (10 < number & number < 20)
+            {
+                return teensMap[number];
             }
             return tensMap[number / 10];
         }
