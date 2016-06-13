@@ -54,7 +54,11 @@ namespace NumberStrings
             {
                 return teensMap[number];
             }
-            return tensMap[number / 10];
+            if (9 < number & number < 100 & number % 10 == 0)
+            {
+                return tensMap[number / 10];
+            }
+            return $"{tensMap[number / 10]} {digitMap[number % 10]}";
         }
     }
 }

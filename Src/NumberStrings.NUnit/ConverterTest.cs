@@ -49,5 +49,20 @@ namespace NumberStrings.NUnit
         {
             Assert.AreEqual(digitName, Converter.NumberToString(digit));
         }
+
+        [Test]
+        [TestCase(29, "Twenty Nine")]
+        [TestCase(38, "Thirty Eight")]
+        [TestCase(47, "Fourty Seven")]
+        [TestCase(56, "Fifty Six")]
+        [TestCase(65, "Sixty Five")]
+        [TestCase(74, "Seventy Four")]
+        [TestCase(83, "Eighty Three")]
+        [TestCase(92, "Ninety Two")]
+        [TestCase(91, "Ninety One")]
+        public void TwoDigits(int number, string numberName)
+        {
+            Assert.AreEqual(numberName, Converter.NumberToString(number));
+        }
     }
 }
