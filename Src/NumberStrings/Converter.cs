@@ -37,7 +37,15 @@ namespace NumberStrings
             if (999 < number & number < 10000)
             {
                 var thousands = (number / 1000);
-                return $"{UnitsMap[thousands]} Thousand";
+                if (number%1000 == 0)
+                {
+                    return $"{UnitsMap[thousands]} Thousand";
+                }
+                if (number/100%10 == 0)
+                {
+                    return $"{UnitsMap[thousands]} Thousand and {Convert1To99(number % 100)}";
+                }
+                return $"{ UnitsMap[thousands]} Thousand {UnitsMap[number / 100 % 10]} Hundred and {Convert1To99(number % 100)}";
             }
             return "";
         }
