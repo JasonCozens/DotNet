@@ -27,18 +27,9 @@ namespace NumberStrings
             {
                 return Convert1To99(number);
             }
-            if (99 < number & number < 1000)
-            {
-                var units = number%10;
-                var tens = (number/10)%10;
-                var hundreds = (number/100);
-                if (units == 0 & tens == 0)
-                {
-                    return $"{UnitsMap[hundreds]} Hundred";
-                }
-                    return $"{UnitsMap[hundreds]} Hundred and {Convert1To99(number % 100)}";
-            }
-            return "";
+            if (!(99 < number & number < 1000)) return "";
+            var hundreds = (number/100);
+            return number % 100 == 0 ? $"{UnitsMap[hundreds]} Hundred" : $"{UnitsMap[hundreds]} Hundred and {Convert1To99(number % 100)}";
         }
 
         private static string Convert1To99(int number)
