@@ -22,7 +22,23 @@ namespace NumberStrings
                 {8, "Eight"},
                 {9, "Nine"},
             };
-            return digitMap[number];
+            var tensMap = new Dictionary<int, string>
+            {
+                {1, "Ten"},
+                {2, "Twenty"},
+                {3, "Thirty"},
+                {4, "Fourty"},
+                {5, "Fifty"},
+                {6, "Sixty"},
+                {7, "Seventy"},
+                {8, "Eighty"},
+                {9, "Ninety"},
+            };
+            if (0 < number & number < 10)
+            {
+                return digitMap[number];
+            }
+            return tensMap[number / 10];
         }
     }
 }
