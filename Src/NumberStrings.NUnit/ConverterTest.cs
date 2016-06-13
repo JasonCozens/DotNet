@@ -60,6 +60,15 @@ namespace NumberStrings.NUnit
         [TestCase(763, "Seven Hundred and Sixty Three")]
         [TestCase(847, "Eight Hundred and Forty Seven")]
         [TestCase(999, "Nine Hundred and Ninety Nine")]
+        [TestCase(1000, "One Thousand")]
+        [TestCase(2000, "Two Thousand")]
+        [TestCase(3000, "Three Thousand")]
+        [TestCase(4000, "Four Thousand")]
+        [TestCase(5000, "Five Thousand")]
+        [TestCase(6000, "Six Thousand")]
+        [TestCase(7000, "Seven Thousand")]
+        [TestCase(8000, "Eight Thousand")]
+        [TestCase(9000, "Nine Thousand")]
         public void NumberToString_Test(int number, string numberName)
         {
             Assert.AreEqual(numberName, Converter.NumberToString(number));

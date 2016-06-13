@@ -23,13 +23,23 @@ namespace NumberStrings
 
         public static string NumberToString(int number)
         {
-            if (0 < number  & number < 100)
+            if (0 < number & number < 100)
             {
                 return Convert1To99(number);
             }
-            if (!(99 < number & number < 1000)) return "";
-            var hundreds = (number/100);
-            return number % 100 == 0 ? $"{UnitsMap[hundreds]} Hundred" : $"{UnitsMap[hundreds]} Hundred and {Convert1To99(number % 100)}";
+            if (99 < number & number < 1000)
+            {
+                var hundreds = (number/100);
+                return number%100 == 0
+                    ? $"{UnitsMap[hundreds]} Hundred"
+                    : $"{UnitsMap[hundreds]} Hundred and {Convert1To99(number%100)}";
+            }
+            if (999 < number & number < 10000)
+            {
+                var thousands = (number / 1000);
+                return $"{UnitsMap[thousands]} Thousand";
+            }
+            return "";
         }
 
         private static string Convert1To99(int number)
