@@ -58,7 +58,21 @@ namespace NumberStrings
             {
                 return tensMap[number / 10];
             }
-            return $"{tensMap[number / 10]} {digitMap[number % 10]}";
+            if (9 < number & number < 100)
+            {
+                return $"{tensMap[number / 10]} {digitMap[number % 10]}";
+            }
+            if (99 < number & number < 1000)
+            {
+                var units = number%10;
+                var tens = (number/10)%10;
+                var hundreds = (number/100);
+                if (units == 0 & tens == 0)
+                {
+                    return $"{digitMap[hundreds]} Hundred";
+                }
+            }
+            return "";
         }
     }
 }

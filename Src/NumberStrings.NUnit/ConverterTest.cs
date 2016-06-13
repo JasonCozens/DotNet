@@ -64,5 +64,20 @@ namespace NumberStrings.NUnit
         {
             Assert.AreEqual(numberName, Converter.NumberToString(number));
         }
+
+        [Test]
+        [TestCase(100, "One Hundred")]
+        [TestCase(200, "Two Hundred")]
+        [TestCase(300, "Three Hundred")]
+        [TestCase(400, "Four Hundred")]
+        [TestCase(500, "Five Hundred")]
+        [TestCase(600, "Six Hundred")]
+        [TestCase(700, "Seven Hundred")]
+        [TestCase(800, "Eight Hundred")]
+        [TestCase(900, "Nine Hundred")]
+        public void MultiplesOf100To900(int number, string numberName)
+        {
+            Assert.AreEqual(numberName, Converter.NumberToString(number));
+        }
     }
 }
