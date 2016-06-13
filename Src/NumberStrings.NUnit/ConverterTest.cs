@@ -15,12 +15,6 @@ namespace NumberStrings.NUnit
         [TestCase(7, "Seven")]
         [TestCase(8, "Eight")]
         [TestCase(9, "Nine")]
-        public void SingleDigit(int digit, string digitName)
-        {
-            Assert.AreEqual(digitName, Converter.NumberToString(digit));
-        }
-
-        [Test]
         [TestCase(10, "Ten")]
         [TestCase(20, "Twenty")]
         [TestCase(30, "Thirty")]
@@ -30,12 +24,6 @@ namespace NumberStrings.NUnit
         [TestCase(70, "Seventy")]
         [TestCase(80, "Eighty")]
         [TestCase(90, "Ninety")]
-        public void MultiplesOf10To90(int number, string numberName)
-        {
-            Assert.AreEqual(numberName, Converter.NumberToString(number));
-        }
-
-        [Test]
         [TestCase(11, "Eleven")]
         [TestCase(12, "Twelve")]
         [TestCase(13, "Thirteen")]
@@ -45,12 +33,6 @@ namespace NumberStrings.NUnit
         [TestCase(17, "Seventeen")]
         [TestCase(18, "Eighteen")]
         [TestCase(19, "Nineteen")]
-        public void Teens(int digit, string digitName)
-        {
-            Assert.AreEqual(digitName, Converter.NumberToString(digit));
-        }
-
-        [Test]
         [TestCase(29, "Twenty Nine")]
         [TestCase(38, "Thirty Eight")]
         [TestCase(47, "Forty Seven")]
@@ -60,12 +42,6 @@ namespace NumberStrings.NUnit
         [TestCase(83, "Eighty Three")]
         [TestCase(92, "Ninety Two")]
         [TestCase(91, "Ninety One")]
-        public void TwoDigits(int number, string numberName)
-        {
-            Assert.AreEqual(numberName, Converter.NumberToString(number));
-        }
-
-        [Test]
         [TestCase(100, "One Hundred")]
         [TestCase(200, "Two Hundred")]
         [TestCase(300, "Three Hundred")]
@@ -84,7 +60,7 @@ namespace NumberStrings.NUnit
         [TestCase(763, "Seven Hundred and Sixty Three")]
         [TestCase(847, "Eight Hundred and Forty Seven")]
         [TestCase(999, "Nine Hundred and Ninety Nine")]
-        public void MultiplesOf100To900(int number, string numberName)
+        public void NumberToString_Test(int number, string numberName)
         {
             Assert.AreEqual(numberName, Converter.NumberToString(number));
         }
